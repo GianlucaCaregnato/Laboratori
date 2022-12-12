@@ -16,16 +16,16 @@ void Maze::print() {
 
 bool Maze::end() {
 
-	system("cls");
+	std::cout << "HAI VINTOOO !!!!" << std::endl;
 
-	std::cout << "WIN" << std::endl;
+	win = true;
 
 	return true;
 }
 
 Maze::Maze() 
 
-	:maz{ }, pos{ 7 , 4 } {
+	:maz{ }, pos{ 6 , 4 }, win{ false } {
 	class exception {};
 
 	std::fstream Myfile;
@@ -47,20 +47,64 @@ Maze::Maze()
 	print();
 }
 
-bool Maze::up() {
+bool Maze::left() {
 
 	if (maz[pos[0]][pos[1] - 1] == ' ') { //se la posizione dove si vuole andare è buona:
 
-		maz[pos[0]][pos[1] - 1] = 'R'; //Metto una R sul posto nuvo
+		maz[pos[0]][pos[1] - 1] = '\33'; //Metto una R sul posto nuvo
 		maz[pos[0]][pos[1]] = ' '; //Cancello la posizione del vecchio robot
+		pos[1] = pos[1] - 1;
 
+		print();
 		return true;
 	}
 
 	if (maz[pos[0]][pos[1] - 1] == '*')
 		return false;
 
-	if (maz[pos[0]][pos[1] - 1] == '*')
+	if (maz[pos[0]][pos[1] - 1] == 'E')
+		return end();
+
+	return false;
+}
+
+bool Maze::right() {
+
+	if (maz[pos[0]][pos[1] + 1] == ' ') { //se la posizione dove si vuole andare è buona:
+
+		maz[pos[0]][pos[1] + 1] = '\32'; //Metto una R sul posto nuvo
+		maz[pos[0]][pos[1]] = ' '; //Cancello la posizione del vecchio robot
+		pos[1] = pos[1] + 1;
+
+		print();
+		return true;
+	}
+
+	if (maz[pos[0]][pos[1] + 1] == '*')
+		return false;
+
+	if (maz[pos[0]][pos[1] + 1] == 'E')
+		return end();
+
+	return false;
+}
+
+bool Maze::up() {
+
+	if (maz[pos[0] - 1][pos[1]] == ' ') { //se la posizione dove si vuole andare è buona:
+
+		maz[pos[0] - 1][pos[1]] = '\30'; //Metto una R sul posto nuvo
+		maz[pos[0]][pos[1]] = ' '; //Cancello la posizione del vecchio robot
+		pos[0] = pos[0] - 1;
+
+		print();
+		return true;
+	}
+
+	if (maz[pos[0] - 1][pos[1]] == '*')
+		return false;
+
+	if (maz[pos[0] - 1][pos[1]] == 'E')
 		return end();
 
 	return false;
@@ -68,15 +112,21 @@ bool Maze::up() {
 
 bool Maze::down() {
 
-	return false;
-}
+	if (maz[pos[0] + 1][pos[1]] == ' ') { //se la posizione dove si vuole andare è buona:
 
-bool Maze::left() {
+		maz[pos[0] + 1][pos[1]] = '\31'; //Metto una R sul posto nuvo
+		maz[pos[0]][pos[1]] = ' '; //Cancello la posizione del vecchio robot
+		pos[0] = pos[0] + 1;
 
-	return false;
-}
+		print();
+		return true;
+	}
 
-bool Maze::right() {
+	if (maz[pos[0] + 1][pos[1]] == '*')
+		return false;
+
+	if (maz[pos[0] + 1][pos[1]] == 'E')
+		return end();
 
 	return false;
 }

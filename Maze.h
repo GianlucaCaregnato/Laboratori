@@ -12,6 +12,7 @@ private:
 
 	char maz[9][9]; //contiene al suo interno il labirinto
 	int pos[2]; // contiene le cordinate attuali del robot
+	bool win;
 
 	void print(); //funzione che stampa lo spostamento del robot
 	bool end();

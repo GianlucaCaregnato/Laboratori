@@ -7,44 +7,54 @@ bool RandomRobot::move(Maze& obj) {
 
 		case 0:
 			obj.right();
+			break;
 
 		case 1:
 			obj.left();
+			break;
 
 		case 2:
 			obj.up();
+			break;
 
 		case 3:
 			obj.down();
+			break;
 
-		case 4: {
-
+		case 4: 
 			obj.up();
 			obj.right();
-		}
-		case 5: {
+
+			return true;
+
+
+		case 5: 
 			//in alto a sinistra
 			obj.up();
 			obj.left();
-		}
-		case 6: {
+
+			return true;
+		
+		case 6:
 			//in basso a destra
 			obj.down();
 			obj.right();
-		}
-		case 7: {
+
+			return true;
+
+		case 7:
 			//in basso a sinistra
 			obj.down();
 			obj.left();
-		}
+
+			return true;
+
 		default: {
 			std::cout << "qualcosa è andato storto";
 			break;
 		}
 
 	}
-	Sleep(1000);
-	return false;
 }
 
 int RandomRobot::random_int() {

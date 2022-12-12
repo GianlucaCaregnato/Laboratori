@@ -51,7 +51,7 @@ bool Maze::left() {
 
 	if (maz[pos[0]][pos[1] - 1] == ' ') { //se la posizione dove si vuole andare è buona:
 
-		maz[pos[0]][pos[1] - 1] = '\33'; //Metto una R sul posto nuvo
+		maz[pos[0]][pos[1] - 1] = 's'; //Metto una R sul posto nuvo
 		maz[pos[0]][pos[1]] = ' '; //Cancello la posizione del vecchio robot
 		pos[1] = pos[1] - 1;
 

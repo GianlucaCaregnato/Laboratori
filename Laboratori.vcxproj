@@ -24,6 +24,7 @@
     <ProjectGuid>{bed34a71-82c2-48e6-91fb-3e70da345f39}</ProjectGuid>
     <RootNamespace>Laboratori</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Labirinto</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

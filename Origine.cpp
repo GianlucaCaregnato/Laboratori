@@ -19,9 +19,9 @@ int main() {
 
 
 	RandomRobot test1 = RandomRobot();
-	while (true) {
+	while (!test.isEnd()) {
 
-		Sleep(500);
+		Sleep(300);
 		test1.move(test);
 	}
 

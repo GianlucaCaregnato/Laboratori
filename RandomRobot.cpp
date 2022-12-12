@@ -25,7 +25,7 @@ bool RandomRobot::move(Maze& obj) {
 			obj.up();
 			obj.right();
 
-			return true;
+			break;
 
 
 		case 5: 
@@ -33,28 +33,29 @@ bool RandomRobot::move(Maze& obj) {
 			obj.up();
 			obj.left();
 
-			return true;
+			break;
 		
 		case 6:
 			//in basso a destra
 			obj.down();
 			obj.right();
 
-			return true;
+			break;
 
 		case 7:
 			//in basso a sinistra
 			obj.down();
 			obj.left();
 
-			return true;
+			break;
 
 		default: {
 			std::cout << "qualcosa è andato storto";
-			break;
+			return false;
 		}
 
 	}
+	return true;
 }
 
 int RandomRobot::random_int() {

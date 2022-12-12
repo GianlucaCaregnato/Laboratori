@@ -28,6 +28,8 @@ public:
 	bool left();
 	bool right();
 
+	bool isEnd() { return win; };
+
 };
 
 

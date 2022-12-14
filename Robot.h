@@ -4,9 +4,13 @@
 
 class Robot {
 
+protected:
+
 	virtual bool move(Maze&) = 0;
 
-	//virtual int random_int();
+	int random_int();
+
+	bool random_move(Maze&);
 };
 
 #endif

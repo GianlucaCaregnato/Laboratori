@@ -46,10 +46,14 @@ Maze::Maze()
 
 	print();
 }
-
+bool Maze::toleft() {
+	if (maz[pos[0]][pos[1] - 1] == ' ')
+		return true;
+	return false;
+}
 bool Maze::left() {
 
-	if (maz[pos[0]][pos[1] - 1] == ' ') { //se la posizione dove si vuole andare è buona:
+	if (toleft()) { //se la posizione dove si vuole andare è buona:
 
 		maz[pos[0]][pos[1] - 1] = '<'; //Metto una R sul posto nuvo
 		maz[pos[0]][pos[1]] = ' '; //Cancello la posizione del vecchio robot
@@ -68,9 +72,15 @@ bool Maze::left() {
 	return false;
 }
 
+bool Maze::toright() {
+	if (maz[pos[0]][pos[1] + 1] == ' ')
+		return true;
+	return false;
+}
+
 bool Maze::right() {
 
-	if (maz[pos[0]][pos[1] + 1] == ' ') { //se la posizione dove si vuole andare è buona:
+	if (toright()) { //se la posizione dove si vuole andare è buona:
 
 		maz[pos[0]][pos[1] + 1] = '>'; //Metto una R sul posto nuvo
 		maz[pos[0]][pos[1]] = ' '; //Cancello la posizione del vecchio robot
@@ -89,9 +99,15 @@ bool Maze::right() {
 	return false;
 }
 
+bool Maze::toup() {
+	if (maz[pos[0] - 1][pos[1]] == ' ')
+		return true;
+	return false;
+}
+
 bool Maze::up() {
 
-	if (maz[pos[0] - 1][pos[1]] == ' ') { //se la posizione dove si vuole andare è buona:
+	if (toup()) { //se la posizione dove si vuole andare è buona:
 
 		maz[pos[0] - 1][pos[1]] = '\30'; //Metto una R sul posto nuvo
 		maz[pos[0]][pos[1]] = ' '; //Cancello la posizione del vecchio robot
@@ -110,9 +126,15 @@ bool Maze::up() {
 	return false;
 }
 
+bool Maze::todown() {
+	if (maz[pos[0] + 1][pos[1]] == ' ')
+		return true;
+	return false;
+}
+
 bool Maze::down() {
 
-	if (maz[pos[0] + 1][pos[1]] == ' ') { //se la posizione dove si vuole andare è buona:
+	if (todown()) { //se la posizione dove si vuole andare è buona:
 
 		maz[pos[0] + 1][pos[1]] = '\31'; //Metto una R sul posto nuvo
 		maz[pos[0]][pos[1]] = ' '; //Cancello la posizione del vecchio robot

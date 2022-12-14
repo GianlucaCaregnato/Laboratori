@@ -28,7 +28,14 @@ public:
 	bool left();
 	bool right();
 
+	bool toup();
+	bool todown();
+	bool toleft();
+	bool toright();
+
 	bool isEnd() { return win; };
+
+	char direction_p() { return maz[pos[0]][pos[1]]; };
 
 };
 

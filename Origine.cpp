@@ -5,25 +5,18 @@
 #include "Maze.h"
 #include "Robot.h"
 #include "RandomRobot.h"
+#include "RightHandRuleRobot.h"
 
 int main() {
 
 	Maze test = Maze();
 
-	/*test.down();
-	Sleep(500);
-
-	test.left();
-	Sleep(500);*/
-
-
-
 	RandomRobot test1 = RandomRobot();
-	while (!test.isEnd()) {
+	
+	//test1.move(test);
 
-		Sleep(300);
-		test1.move(test);
-	}
+	RightHandRuleRobot test2 = RightHandRuleRobot();
 
+	test2.move(test);
 		
 }

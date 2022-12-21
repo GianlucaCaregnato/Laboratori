@@ -133,12 +133,14 @@
     <ClCompile Include="RandomRobot.cpp" />
     <ClCompile Include="RightHandRuleRobot.cpp" />
     <ClCompile Include="Robot.cpp" />
+    <ClCompile Include="SmartRobot.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Maze.h" />
     <ClInclude Include="RandomRobot.h" />
     <ClInclude Include="RightHandRuleRobot.h" />
     <ClInclude Include="Robot.h" />
+    <ClInclude Include="SmartRobot.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Labirinto.txt" />

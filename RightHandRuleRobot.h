@@ -9,7 +9,7 @@ class RightHandRuleRobot: public Robot {
 
 public:
 
-	virtual bool move(Maze&);
+	bool move(Maze&);
 
 private:
 	bool find_right(Maze&);

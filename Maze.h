@@ -37,6 +37,7 @@ public:
 
 	char direction_p() { return maz[pos[0]][pos[1]]; };
 
+	char maze(int i, int j) { return maz[i][j]; };
 };
 
 
